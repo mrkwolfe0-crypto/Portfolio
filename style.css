@@ -11,4 +11,36 @@
 html {scroll-behavior: smooth; }
 /*Doing more universals lately*/
 * { margin: 0; padding: 0; box-sizing:border-box; font-family:'Segoe UI', sans-serif; }
-body {background-color}
+body {background-color: var(--bg); color: var(--text); padding: 01rem; line-height: 1.5; }
+.container {max-width: 900px; margin: 0 auto;}
+
+/*Navigation designing and layout*/
+.navbar {display:flex; justify-content: space-between; padding: 2rem; border-bottom: 1px solid #334155;}
+.navbar ul {display:flex; list-style: none; gap:1.5rem;}
+.navbar a {color: var(--text); text-decoration:none; font-weight:500}
+.navbar a:hover {color: var(--accent);}
+
+/*This next section creates the interactive project grid layout*/
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));/*This will allow for the projects to be listed dynamically as I grow and make more repositories.*/
+    gap: 1.5rem;
+}
+
+/*Individual js card template styling*/
+.project-card {
+    background: var(--card-bg);
+    border: 1px solid #335155;
+    border-radius: 8px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.project-card h3 {color:var(--accent); margin-bottom: 0.5rem; text-transform:capitalize;}
+.project-card p {color:var(--textdim); margin-bottom:1rem; font-size:0.95rem;}
+.tags {display:flex; flex-wrap:wrap; gap:0.5rem; margin-bottom:1.5rem}
+.tag {background:#334155; padding:0.2rem 0.6rem; border-radius:4px; font-size:0.8rem; font-weight:600;}
+.card-links a {color:var(--accent); text-decoration:none; font-weight:bold;}
+.card-links a:hover {text-decoration:underline;}
+.loading-text {color:var(--text-dim);}
