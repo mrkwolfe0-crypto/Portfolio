@@ -1,0 +1,36 @@
+<iDOCTYPE html>
+    <html lang ="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport content="width=device-width,initial-scale=1.0">
+            <title>Mark Wolfe | Developer Portfolio</title>
+            <link rel=""stylesheet" href="stye.css">
+        </head>
+        <body>
+            <div class="container">
+                <header class="navbar">
+                    <div class="logo">Mark Wolfe</div>
+                    <nav>
+                        <ul>
+                            <li><a href="#about">About</a></li>
+                            <li><a href="#projects">Projects</a></li>
+                        </ul>
+                    </nav>
+                </header>
+                <section id="about" class="hero-section">
+                    <h1> Hi, I'm <span class="highlight">Mark</span></h1>
+                    <p>Software developer focused on clean architectural design and automation. And exploring the languages and how the concepts span accross them.</p>
+                </section>
+                <!--This is where I will dynamically link my projects-->
+                <section id="projects" clas="projects-section">
+                    <h2>Featured Projects</h2>
+                    <!--This is where js will insert the cards at.-->
+                    <div class="project-grid" id="dynamic-project-grid">
+                        <p class="loading-text">Fetching production repositories from GitHub</p>
+                    </div>
+                </section>
+            </div>
+            <!--js to the rescue, if I have done it right.-->
+        </body>
+    </html>
+</iDOCTYPE>
