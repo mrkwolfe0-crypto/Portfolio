@@ -1,46 +1,187 @@
-/*Base system configurations*/
+/*
+    Base system configurations
+
+    :root stores global CSS variables.
+    These act like reusable constants so the color system
+    can be changed from one location instead of searching
+    through the entire stylesheet.
+*/
 :root {
     --bg: #0f172a;
     --card-bg: #1e293b;
     --text: #f8fafc;
     --text-dim: #94a3b8;
-    --accent: #ff9500; /*Custom orange for the pop in the color scheme.*/
+    --accent: #ff9500; 
     --accent-hover: #cc7800;
 }
+/*
+    Enables smooth scrolling when navigation links
+    jump to sections of the webpage.
+*/
+html {
+    scroll-behavior: smooth;
+}
+/*
+    Universal configuration.
+    The * selector applies these rules to every element.
+    box-sizing prevents padding and borders from unexpectedly
+    increasing element dimensions.
+*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+/*
+    Main webpage body configuration.
+*/
+body {
+    background-color: var(--bg);
+    color: var(--text);
+    padding: 1rem;
+    line-height: 1.5;
+}
+/*
+    Container controls the maximum width
+    and centers the portfolio content.
+*/
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+/*
+    Navigation designing and layout.
 
-html {scroll-behavior: smooth; }
-/*Doing more universals lately*/
-* { margin: 0; padding: 0; box-sizing:border-box; font-family:'Segoe UI', sans-serif; }
-body {background-color: var(--bg); color: var(--text); padding: 01rem; line-height: 1.5; }
-.container {max-width: 900px; margin: 0 auto;}
-
-/*Navigation designing and layout*/
-.navbar {display:flex; justify-content: space-between; padding: 2rem; border-bottom: 1px solid #334155;}
-.navbar ul {display:flex; list-style: none; gap:1.5rem;}
-.navbar a {color: var(--text); text-decoration:none; font-weight:500}
-.navbar a:hover {color: var(--accent);}
-
-/*This next section creates the interactive project grid layout*/
-.project-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));/*This will allow for the projects to be listed dynamically as I grow and make more repositories.*/
+    Flexbox allows the logo and navigation links
+    to sit horizontally and distribute space.
+*/
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem 0;
+    border-bottom: 1px solid #334155;
+}
+.navbar ul {
+    display: flex;
+    list-style: none;
     gap: 1.5rem;
 }
+.navbar a {
+    color: var(--text);
+    text-decoration: none;
+    font-weight: 500;
+}
+.navbar a:hover {
+    color: var(--accent);
+}
+/*
+    Hero section.
+    Controls the introduction area of the portfolio.
+*/
+.hero-section {
+    padding: 5rem 0;
+    text-align: center;
+}
+.hero-section h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+.highlight {
+    color: var(--accent);
+}
+/*
+    Section spacing.
 
-/*Individual js card template styling*/
+    Creates consistent separation between
+    different portfolio sections.
+*/
+section {
+    padding: 3rem 0;
+}
+h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+}
+/*
+    Dynamic project grid layout.
+
+    JavaScript creates project cards dynamically.
+    CSS Grid automatically adjusts the number of columns
+    based on available screen width.
+*/
+.project-grid {
+    display: grid;
+    grid-template-columns:
+        repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+/*
+    Individual JavaScript-generated card styling.
+
+    These styles apply to the article elements
+    created inside app.js.
+*/
 .project-card {
     background: var(--card-bg);
-    border: 1px solid #335155;
+    border: 1px solid #334155;
     border-radius: 8px;
     padding: 1.5rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
-.project-card h3 {color:var(--accent); margin-bottom: 0.5rem; text-transform:capitalize;}
-.project-card p {color:var(--textdim); margin-bottom:1rem; font-size:0.95rem;}
-.tags {display:flex; flex-wrap:wrap; gap:0.5rem; margin-bottom:1.5rem}
-.tag {background:#334155; padding:0.2rem 0.6rem; border-radius:4px; font-size:0.8rem; font-weight:600;}
-.card-links a {color:var(--accent); text-decoration:none; font-weight:bold;}
-.card-links a:hover {text-decoration:underline;}
-.loading-text {color:var(--text-dim);}
+.project-card h3 {
+    color: var(--accent);
+    margin-bottom: 0.5rem;
+    text-transform: capitalize;
+}
+/*
+    Corrected variable reference.
+    Original:
+    var(--textdim)
+    Fixed:
+    var(--text-dim)
+*/
+.project-card p {
+    color: var(--text-dim);
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+}
+/*
+    Technology label container.
+    Allows multiple programming language
+    tags to wrap if needed.
+*/
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+.tag {
+    background: #334155;
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+/*
+    GitHub repository link styling.
+    This matches the class created dynamically
+    by JavaScript.
+*/
+.card-links a {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: bold;
+}
+.card-links a:hover {
+    text-decoration: underline;
+}
+/*
+    Loading message shown before GitHub data arrives.
+*/
+.loading-text {
+    color: var(--text-dim);
+}
