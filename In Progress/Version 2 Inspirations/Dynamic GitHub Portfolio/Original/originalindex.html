@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!--
+        This allows the website layout to scale correctly
+        across different screen sizes including mobile devices.
+    -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mark Wolfe | Developer Portfolio</title>
+    <!--
+        External CSS connection.
+        This keeps visual design separated from HTML structure.
+    -->
+    <link rel="stylesheet" href="originalstyle.css">
+</head>
+<body>
+    <div class="container">
+        <!--
+            Navigation section.
+            This creates the top-level webpage navigation.
+        -->
+        <header class="navbar">
+            <div class="logo">Mark Wolfe</div>
+            <nav>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                </ul>
+            </nav>
+        </header>
+        <!--
+            Hero section.
+            This introduces who I am and what my development focus is.
+        -->
+        <section id="about" class="hero-section">
+            <h1>
+                Hi, I'm <span class="highlight">Mark</span>
+            </h1>
+            <p>
+                Software developer focused on clean architectural design
+                and automation. Exploring languages and how programming
+                concepts transfer between them.
+            </p>
+        </section>
+        <!--
+            Dynamic project section.
+            JavaScript will communicate with the GitHub API,
+            retrieve repository data, and inject project cards
+            into the target container below.
+        -->
+        <section id="projects" class="projects-section">
+
+            <h2>Featured Projects</h2>
+            <!--
+                DOM Hook / Injection Point
+                JavaScript searches for this exact ID:
+                "dynamic-project-grid"
+                This is where generated project cards will be placed.
+            -->
+            <div class="project-grid" id="dynamic-project-grid">
+                <p class="loading-text">Fetching production repositories from GitHub...</p>
+            </div>
+        </section>
+    </div>
+    <!--
+        JavaScript connection.
+
+        Loading this at the end of the body allows
+        the HTML structure to exist before JavaScript
+        attempts to interact with DOM elements.
+    -->
+    <script src="originalapp.js"></script>
+
+</body>
+</html>

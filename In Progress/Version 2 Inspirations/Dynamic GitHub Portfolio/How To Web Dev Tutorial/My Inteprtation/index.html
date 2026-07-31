@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio Website</title>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css" />
+    <!-- Boxicons CDN -->
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+  </head>
+  <body>
+    <!--Navigation bar-->
+    <nav>
+        <!--<span></span> gives the Logo text a gradiant effect.-->
+        <!--This will be set to the left.-->
+        <a href="#" class="logo"><span>Linda</span></a>
+        <!--ul = unordered list-->
+        <!--This will be centered-->
+        <ul class="links">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#contact">Contact</a>
+        </ul>
+
+        <!--Contact button to the right-->
+        <i class="bx bx-menu" id="menu"></i>
+
+        <!--CTA Button-->
+        <a href="#contact" class="btn">Contact Me</a>
+
+    </nav> <!--This sets the navigation bar-->
+    <!--Navigation bar-->
+
+    <!-- Home Section -->
+  <section id="home">
+    <img src="image.jpg" alt="">
+    
+    <div class="info-box">
+      <h1><span>Hi, I'm Linda</span></h1>
+      <h3><span>Web Developer</span> based in Toronto</h3>
+      <p>Passionate about building responsive, modern, and user-friendly web applications.</p>
+    </div>
+
+    <div class="btn-box">
+      <div class="btn">Hire</div>
+      <div class="btn">Contact Me</div>
+    </div>
+  </section>
+    <!--Home Section-->
+ 
+  <!--About me section-->
+  <section id="about">
+    <div class="about-box">
+      <div class="about-info">
+        <h1><span>About Me</span></h1>
+        <p>I am a front end developer focused on creating smooth visual experiences and responsive interfaces</p>
+      </div>
+  <!--About me section-->
+      <!--The tutorial uses a Boxicon "<i class= 'bx bx-chevron-right' ></i>" that appears to be unavailable in the free version. Rather than spending additional time searching for a replacement, I substituted a dash because the icon is purely cosmetic and does not affect functionality..-->
+      <!--Skills section-->
+      <h2><span>Skills</span></h2>
+      <div class="skills">
+        <ul>
+          <li>
+            <span>-HTML</span>
+          </li>
+          <li>
+            <span>-CSS</span>
+          </li>
+          <li>
+            <span>-JavaScript</span>
+          </li>
+        </ul>
+        <ul>
+          <li>
+            <span>-React</span>
+          </li>
+          <li>
+            <span>-Node</span>
+          </li>
+          <li>
+            <span>-MySQL</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <img src="image.jpg" alt="">
+  </section>
+  <!--Skills section-->
+  <!--Services section-->
+  <section id="services">
+    <h1 class="header"><span>Services</span></h1>
+      <div class="services-container">
+        <div class="box">
+          <h1><span>Web Design</span></h1>
+          <p>Passionate about building responsive, modern, and user-friendly web applications</p>
+          <img src="web-dev.jpg" alt="">
+        </div>
+        <div class="box">
+          <h1><span>Web Development</span></h1>
+          <p>Passionate about building responsive, modern, and user-friendly web applications</p>
+          <img src="web-design.jpg" alt="">
+        </div>
+        <div class="box">
+          <h1><span>Graphics Design</span></h1>
+          <p>Passionate about building responsive, modern, and user-friendly web applications</p>
+          <img src="graphic.jpg" alt="">
+        </div>
+      </div>
+  </section>
+  <!--Services section-->
+  
+  <!--Video stopped at 27 minutes https://www.youtube.com/watch?v=GnFH9Eg-OuM&list=PL4FL-XepWXttYviyLh0yEiNOhAj_qCYs4&index=3-->
+  
+  <!--Contact section-->
+  <!--section#contact makes a section with the id of contact-->
+  <section id="contact">
+    <!--h1.header short hand learned-->
+    <h1 class="header"><span>Contact</span></h1>
+    <form action="#">
+      <!--.input-box-->
+      <div class="input-box">
+        <span>Full Name</span>
+        <input type="text" placeholder="Enter your full name">
+      </div>
+      <div class="input-box">
+        <span>Full Email</span>
+        <input type="text" placeholder="Enter your full email">
+      </div>
+      <div class="input-box">
+        <span>Message</span>
+        <input type="text" placeholder="Enter your message">
+      </div>
+      <!--Outside the div but inside the form-->
+      <!--.btn shorthand for making a button-->
+      <div class="btn">Submit</div>
+    </form>
+    <!--Contact section-->
+  </section>
+  <!--Footer-->
+  <footer>
+  <!--col-left this just makes a column to the left <col-left></col-left>, .col-left - this makes a column div class <div class="col-left"></div>-->
+  <div class="col-left">
+    <!--Not sure if it is me or my skill, or just not knowing how boxicon works I can't get them to work.-->
+    <div class="col-box">
+      <span>Address <i class='bx bxs-location-plus'></i></span>
+      <span>1234 Maple Street Springfiedl Il 62701</span>
+    </div>
+    <div class="col-box">
+      <span>Phone <i class='bx bxs-phone'></i></span>
+      <span>1234567890</span>
+    </div>
+    <div class="col-box">
+      <span>Email <i class='bx bxs-envelope'></i></span>
+      <span>sampleLinda@gmail.com</span>
+    </div>
+  </div>
+
+  <div class="col-right">
+    <span>About My Service</span>
+    <p>Explanation goes here</p>
+    <div class="social-icons">
+      <a href="#" target="_blank"><i class='bx bxl-github'></i></a>
+      <a href="#" target="_blank"><i class='bx bxl-linkedin'></i></a>
+      <a href="#" target="_blank"><i class='bx bxl-twitter'></i></a>
+      <a href="#" target="_blank"><i class='bx bxl-facebook'></i></a>
+    </div>
+  </div>
+  </footer>
+  <!--Footer-->
+    
+  <!--In his video he has js named script, I am used to app.js so I named it accordingly.-->
+    <script src="app.js"></script>
+  </body>
+</html>

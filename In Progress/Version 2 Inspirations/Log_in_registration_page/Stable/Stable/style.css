@@ -1,0 +1,314 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+/* I forgot to put the * before the { and had error indicators hoplding me back until I remembered from another tutorial that this meant it was universal, and I fixed ity, noting this moving forward.*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/*As I learned doing my Quiz App for Cera Ve .header or .logo is a means to referencing the class from the html file, dictating hpow they will be styled.*/
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    /*Makes the stipe span the width of the device viewing the webpage*/
+    padding: 20px 100px;
+    /*This line applies 20px of padding to the top and bottom of an element and 100px of padding to the left and right sides*/
+    background: transparent;
+    /*The background color will alter the top stripe at the top of the page*/
+    display: flex;
+    /*This activates the Flexbox layout engine, instantly turning your header into a flexible container so its children (the Logo and the Navbar) can sit side-by-side instead of stacking vertically.*/
+    justify-content: space-between;
+    /*This acts like an automatic magnet, pushing your Logo all the way to the far left and your Navbar links all the way to the far right, utilizing 100% of the available room cleanly.*/
+    align-items: center;
+    /*This vertically centers your logo text and navigation links perfectly along the horizontal axis, preventing anything from looking misaligned or cut off.*/
+    z-index: 99;
+    /*This controls the "3D depth" stack of your webpage.*/
+}
+
+.logo {
+    font-size: 32px;
+    color: #efff;
+    text-decoration: none;
+    font-weight: 700;
+    pointer-events: none;
+    /*Makes the logo unclickable*/
+}
+
+.navbar a {
+    font-size: 18px;
+    color: #efff;
+    text-decoration: none;
+    font-weight: 500;
+    margin-right: 40px;
+    /*Adds space between each link.*/
+}
+
+.navbar .btnLogin-popup {
+    position: relative;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    color: #efff;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.navbar .btnLogin-popup::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 100%;
+    height: 2px;
+    background: #fff;
+    opacity: .85;
+}
+
+.section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url('background.png') no-repeat;
+    /*Remember not to use "" when encapsulating the url use''*/
+    background-size: cover;
+    background-position: center;
+}
+
+.wrapper {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 450px;
+    height: 100%;
+    background: transparent;
+    backdrop-filter: blur(15px); /*Creates a window over the webpage that is floating ofver the background of the main page.*/
+    box-shadow: -1px 0 10px rgba(0,0,0,.2); /*Creates a shadow fore the login box.*/
+    border-left: 2px solid rgba(255,255,255,.1); /*Adds a defined transparent line indicating the border of the login box.*/
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /*In the tutorial he aligned more to the left almost spanning accross the box, in mine they are centered. Unsure what I did wrong here*/
+    flex-direction: column;/*Puts the login with Google and Facebook underneeth the Don't have an account segment*/
+    padding: 0 40px; /*Adds padding to the buttons in the login section.*/
+    opacity:0;
+    pointer-events: none;
+}
+
+.wrapper.active-popup {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.icon-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 45px;
+    height: 45px;
+    background:#efff;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom-left-radius: 10px;
+}
+
+.icon-close i {
+    font-size: 32px;
+    color:#333;
+
+}
+
+.wrapper .logreg-box {
+    width: 100%;
+    padding-top: 80px; /* Pushes the form text cleanly below your navigation links! */
+    /*background: pink;*/
+    /*Makes the box around the log in and password sections the color set*/
+}
+
+.wrapper .form-box.login {
+    display: block;
+} 
+
+.wrapper.active .form-box.login {
+    display: none;
+}
+.wrapper.active .form-box.register {
+    display: block;
+}
+
+.wrapper .form-box.register {
+    display: none;
+}
+
+.logreg-box .logreg-title {
+    text-align: center;
+    margin-bottom: 40px;
+    color: #fff;
+}
+
+.logreg-title h2 {
+    font-size: 32px;
+}
+
+.logreg-title p {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.logreg-box .input-box {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    background: gray; /*He cleared it out, I want it to be gray*/
+    margin: 30px 0;
+    border-bottom: 2px solid #efff;
+}
+
+.input-box input {
+    width: 100%;
+    height: 100%; 
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    color: #efff;
+    font-weight:500;
+    padding-right: 25px;
+}
+
+.input-box label {
+    position: absolute; /*I am not getting the same slide effect and placing the email and password in the slide out menu as he is, can't figure out why. Could be I am using a different version of the editor the video is 3 years old, would explasin why the logreg- shortcuts he does when I do them creates different code. Every thing from this point is on point.*/
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    font-size:16px;
+    color: #efff;
+    font-weight:500;
+    pointer-events: none;
+    transition: .5s;
+}
+
+.input-box input:focus~label,
+.input-box input:valid~label {
+    top: -5px;
+    font-size: 12px;
+    transform: translateY(0);
+} /*This will shift the email and password titles out of the way of the users entry*/
+
+
+
+
+.input-box .icon {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+
+    font-size: 19px;
+    color: #efff;
+}
+
+.logreg-box .remember-forgot {
+    font-size: 14.5px;
+    color: #efff;
+    font-weight: 500;
+    margin: -15px 0 15px;
+    display: flex;
+    justify-content: space-between; /*Seperates Remember me and the Forgot password, Remember me stays left orientated and forgot password shifts over to the right aligned orientation*/
+}
+
+.remember-forgot label input {
+    accent-color: #efff;
+    margin-right: 3px; /*Puts space between the Remember me check box and the wording*/
+}
+
+.remember-forgot label input {
+    accent-color: #efff;
+    margin-right: 3px;
+}
+
+.remember-forgot a {
+    color: #efff;
+    text-decoration: none;
+}
+.remember-forgot a:hover {
+    text-decoration: underline; /*Makes the undeline under Forgot Password only appear when the mouse hovers over it*/
+}
+
+.logreg-box .btn {
+    width: 100%;
+    height: 45px;
+    background: #efff;
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    box-shadow: 0 2px 5px rgba(0,0,0,2);
+    cursor: pointer;
+    font-size: 16px;
+    color:#222;
+    font-weight: 600;
+} /*Changes the login button from being in the bottom left and small almost unnoticable to a button spanning the whole login box and increased in size.*/
+
+.logreg-box .logreg-link {
+    font-size: 14.5px;
+    color: #efff;
+    text-align: center;
+    font-weight:500;
+    /*margin-top: 25px;*/
+    margin: 25px 0 15px;
+} /*Spaces out and centers the Don't have an account Register option under the Login button*/
+
+.logreg-link p a {
+    color: #efff;
+    text-decoration:none;
+    font-weight: 600;
+} /*Centers the Register text segment*/
+
+.logreg-link p a:hover {
+    text-decoration: underline;
+}
+
+.media-options {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+} /*In his video this sets the login with Google and Facebook to center, I messed up somewhere and somehow it centered with how I had the code*/
+
+.media-options a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width:100%;
+    height: 50px;
+    background: transparent;
+    border: 2px solid #efff;
+    margin: 10px 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,.2);
+    border-radius: 40px;
+    color: #efff;
+    text-decoration: none;
+    transition: .5s /*For the underline mouse hover over effect.*/
+}/*This is starting the process of stylizing the Google and Facebook button. ANd unlike in his video, his buttone extend the whole login box, mine do not the stylized button just covers the text, I verified I have done as he did.*/
+
+.media-options a:hover {
+    background: rgba(255,255,255,.1);
+}
+
+.media-options a i {
+    font-size: 22px;
+    margin: 0 8px 1.5px 0;
+} /*Font size of the log in with options.*/
+
+.media-options a span {
+    font-size:16px;
+    font-weight: 500;
+}
+
