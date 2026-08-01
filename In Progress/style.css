@@ -1,12 +1,157 @@
+/*How Font Works
+
+    For font-size: 1em equals the font size inherited from the parent element.
+
+    For padding, margins, width, height: 1em equals the font size of the element itself.
+
+Example:
+If a container <div class="card"> has a font size of 20px:*/
+/*Navigation is just a means to get around and unless I am seperating by functions not by designed sections. Each section could have its own variant of navigating.*/
 /*Universal Header and layout*/
+:root {
+    --bg: #0f172a;
+    --card-bg: #1e293b;
+    --text: #f8fafc;
+    --text-dim: #94a3b8;
+    --accent: #ff9500; 
+    --accent-hover: #cc7800;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    background-color: var(--bg);
+    color: var(--text);
+    padding: 1rem;
+    line-height: 1.5;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem 0;
+    border-bottom: 1px solid #334155;
+}
+
+.navbar ul {
+    display: flex;
+    list-style: none;
+    gap: 1.5rem;
+}
+
+.navbar a {
+    color: var(--text);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.navbar a:hover {
+    color: var(--accent);
+}
+
+section {
+    padding: 3rem 0;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+}
 /*Universal Header and layout*/
-/*Navigation section*/
-/*Navigation section*/
 /*State Manager Section Wrapper*/
 /*State Manager Section Wrapper*/
 /*Hero Section*/
+.hero-section {
+    padding: 5rem 0;
+    text-align: center;
+}
+.hero-section h1 {
+    font-size:3rem;
+    margin-bottom: 1rem;
+}
+.highlight {
+    color: var(--accent);
+}
+.section {
+    padding: 3rem 0;
+}
+h2 {
+    font-size: 2rem;
+}
 /*Hero Section*/
-/*Resume*/
-/*Resume*/
 /*Dynamic GitHub Project Section, live feed*/
+.project-grid {
+    display: grid;
+    grid-template-columns:repeat(auto-fit, minmax(250px, 1fr));
+}
+.project-card {
+    border: 3px solid rgb(49, 49, 49);
+    border-radius: 0.5em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+    object-fit: cover;
+    padding: 3em;
+    gap: 3em;
+    background-color: rgba(0,0,0,0.9);
+}
+.project-card p {
+    color: var(--text-dim);
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+}
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+.tag {
+    background: #334155;
+    padding: 0.2rem 0.6rem;
+    border-radius:4px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+.card-links a {
+    color: var(--accent);
+    display: flex;
+    transition: transform 0.2s ease-in-out;
+}
+.card-links a:hover {
+    transform: translateX(6px);
+}
+.project-card {
+    transition: border-color 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
+}
 /*Dynamic GitHub Project Section, live feed*/
+/*Resume State Manaager Button*/
+.cta-btn {
+    font-size: 25px;
+    background-color: yellow;
+    color: black;
+    border-radius: 25px;
+    /*border-radius: none;*/
+    border: none;
+    padding: 10px 30px;
+    font-family: sans-serif;
+    font-weight: bold;
+    cursor: pointer;
+}
+/*Resume State Manaager Button*/

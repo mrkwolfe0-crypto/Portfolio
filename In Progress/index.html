@@ -8,9 +8,7 @@
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
-<!--.container makes a container, .div makes a div-->
-        <div class="container">
-<!--Navigation section-->
+        <div class="container"><!--.container makes a container, .div makes a div-->
             <header class="navbar">
                 <div class="header">Mark Wolfe</div>
                 <nav>
@@ -22,13 +20,30 @@
                     </ul>
                 </nav>
             </header>
-<!--Navigation section-->
 <!--Universal Header and layout-->
 <!--Hero Section-->
             <section id="about" class="hero-section">
                 <h1>Hi I'm <span class="highlight">Mark</span></h1>
-                <p>Aspiring Software developer focused on clean architectural and automation. 
-                    Exploring languages and how concepts transfer between them.</p>
+                <p>Aspiring Software developer focused on clean architectural and automation. Exploring languages and how concepts transfer between them.</p>
+                
+                <a href="#resume" class="cta-btn">Resume (Scroll to Section)</a>
+
+                <button type="button" id="open-resume-btn" class="cta-btn">Resume (State Manager)</button><!--Button for the state manager-->
+                
+                <a href="https://docs.google.com/document/d/e/2PACX-1vSJZ-3kyyJFJUR3piHCNl--UwSlnZ0yjDoEPZcUroTHVf3au9WolgPHWpq8UKXuXrguYMmAdw5nIkpZ/pub" style="display: inline-block; text-decoration: none;">
+                    <button style="font-size:25px; background-color:yellow; color:black; border-radius:25px; border:none; padding:10px 30px; font-family:sans-serif; font-weight:bold; cursor:pointer;">Resume (External Link)</button>
+                </a>
+                    <!--According to the official HTML standard, an <a> element is an inline text link, while a <button> element is an interactive widget.
+
+                    Rule: You cannot nest one interactive element inside another interactive element.
+
+                    When a browser engine parses <a href="..."> <button> ... </button> </a>, it gets confused about user intent:
+
+                    Does a click mean "Follow the link URL"?
+
+                    Or does a click mean "Trigger the button element"?
+
+                    Different browsers handle this illegal nesting unpredictably—some will strip out the <a> tag automatically, others won't trigger the click event properly, and some will cause double-triggering issues.-->
             </section>
 <!--Hero Section-->
 <!--Dynamic GitHub Project Section, live feed-->
@@ -41,15 +56,20 @@
 <!--Dynamic GitHub Project Section, live feed-->
         </div>
 <!-- State Manager Section Wrapper -->
-<!--Embedded Resume no Glass Panel-->
-            <section id="resume">
-                <h2>Resume</h2>
-                    <iframe src="https://docs.google.com/document/d/e/2PACX-1vSJZ-3kyyJFJUR3piHCNl--UwSlnZ0yjDoEPZcUroTHVf3au9WolgPHWpq8UKXuXrguYMmAdw5nIkpZ/pub" 
-                    width="100%" 
-                    height= "600" 
-                    style="border: none;">
+            <div id="resume-modal" class="modal-overlay" aria-hidden="true">
+                <div class="glass-card">
+                    <button id="close-resume-btn" class="close-btn" aria-label="Close Resume">&times;</button>
+                    <section id="resume">
+<!--Embedded Resume-->
+                        <h2>Resume</h2>
+                        <iframe src="https://docs.google.com/document/d/e/2PACX-1vSJZ-3kyyJFJUR3piHCNl--UwSlnZ0yjDoEPZcUroTHVf3au9WolgPHWpq8UKXuXrguYMmAdw5nIkpZ/pub" 
+                        width="100%" 
+                        height= "600" 
+                        style="border: none;">
                     </iframe>
-            </section>
+                    </section>
+<!--Embedded Resume-->
+            
 <!--Embedded Resume no Glass Panel-->
 <!-- State Manager Section Wrapper -->
         <script src="app.js"></script>
