@@ -87,20 +87,26 @@
     width: 450px;
     height: 100%;
     background: transparent;
-    backdrop-filter: blur(15px); /*Creates a window over the webpage that is floating ofver the background of the main page.*/
-    box-shadow: -1px 0 10px rgba(0,0,0,.2); /*Creates a shadow fore the login box.*/
-    border-left: 2px solid rgba(255,255,255,.1); /*Adds a defined transparent line indicating the border of the login box.*/
+    backdrop-filter: blur(15px);
+    box-shadow: -1px 0 10px rgba(0,0,0,.2);
+    border-left: 2px solid rgba(255,255,255,.1);
     z-index: 100;
     display: flex;
     align-items: center;
-    justify-content: space-between; /*In the tutorial he aligned more to the left almost spanning accross the box, in mine they are centered. Unsure what I did wrong here*/
-    flex-direction: column;/*Puts the login with Google and Facebook underneeth the Don't have an account segment*/
-    padding: 0 40px; /*Adds padding to the buttons in the login section.*/
-    opacity:0;
+    justify-content: space-between;
+    flex-direction: column;
+    padding: 0 40px;
+    
+    /* Smooth Transition & Hiding */
+    transform: scale(0);
+    opacity: 0;
     pointer-events: none;
+    transition: transform .5s ease, opacity .5s ease;
 }
 
+/* When Login button is clicked */
 .wrapper.active-popup {
+    transform: scale(1);
     opacity: 1;
     pointer-events: auto;
 }
@@ -166,6 +172,8 @@
     position: relative;
     width: 100%;
     height: 50px;
+    background: transparent;
+    border-bottom: 2px solid #efff;
     background: gray; /*He cleared it out, I want it to be gray*/
     margin: 30px 0;
     border-bottom: 2px solid #efff;
@@ -180,6 +188,7 @@
     font-size: 16px;
     color: #efff;
     font-weight:500;
+    font-weight: 500;
     padding-right: 25px;
 }
 
