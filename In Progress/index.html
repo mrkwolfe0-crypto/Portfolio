@@ -31,7 +31,8 @@
                 <button type="button" id="open-resume-btn" class="cta-btn">Resume (State Manager)</button><!--Button for the state manager-->
                 
                 <a href="https://docs.google.com/document/d/e/2PACX-1vSJZ-3kyyJFJUR3piHCNl--UwSlnZ0yjDoEPZcUroTHVf3au9WolgPHWpq8UKXuXrguYMmAdw5nIkpZ/pub" style="display: inline-block; text-decoration: none;">
-                    <button style="font-size:25px; background-color:yellow; color:black; border-radius:25px; border:none; padding:10px 30px; font-family:sans-serif; font-weight:bold; cursor:pointer;">Resume (External Link)</button>
+                    <button type="button" class="cta-btn">Resume (External Link)</button>
+                    <!--<button style="font-size:25px; background-color:yellow; color:black; border-radius:25px; border:none; padding:10px 30px; font-family:sans-serif; font-weight:bold; cursor:pointer;">Resume (External Link)</button>-->
                 </a>
                     <!--According to the official HTML standard, an <a> element is an inline text link, while a <button> element is an interactive widget.
 
@@ -56,11 +57,11 @@
 <!--Dynamic GitHub Project Section, live feed-->
         </div>
 <!-- State Manager Section Wrapper -->
-            <div id="resume-modal" class="modal-overlay" aria-hidden="true">
+            <div id="resume-glass" class="modal-overlay" aria-hidden="true">
                 <div class="glass-card">
                     <button id="close-resume-btn" class="close-btn" aria-label="Close Resume">&times;</button>
-                    <section id="resume">
 <!--Embedded Resume-->
+                    <section id="resume">
                         <h2>Resume</h2>
                         <iframe src="https://docs.google.com/document/d/e/2PACX-1vSJZ-3kyyJFJUR3piHCNl--UwSlnZ0yjDoEPZcUroTHVf3au9WolgPHWpq8UKXuXrguYMmAdw5nIkpZ/pub" 
                         width="100%" 
@@ -69,7 +70,15 @@
                     </iframe>
                     </section>
 <!--Embedded Resume-->
-            
+<!--Embedded Resume no Glass Panel-->
+            <!--<section id="resume">
+                <h2>Resume</h2>
+                <iframe src="https://docs.google.com/document/d/e/2PACX-1vSJZ-3kyyJFJUR3piHCNl--UwSlnZ0yjDoEPZcUroTHVf3au9WolgPHWpq8UKXuXrguYMmAdw5nIkpZ/pub" 
+                width="100%" 
+                height= "600" 
+                style="border: none;">
+            </iframe>
+            </section>-->
 <!--Embedded Resume no Glass Panel-->
 <!-- State Manager Section Wrapper -->
         <script src="app.js"></script>
