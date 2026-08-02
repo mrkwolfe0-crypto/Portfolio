@@ -106,6 +106,24 @@ h2 {
 }
 /*Universal Header and layout*/
 
+/*Print and Print Resume link effects*/
+.navbar a {
+    color: var(--accent-orange);
+    text-decoration: none;
+    font-weight: 500;
+    display: inline-block; /* Required for CSS transform transitions */
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+.navbar a.openresumebtn:hover {
+    color: var(--accent);
+    transform: scale(2);
+} /*The link that opens the floating resume popout effect by transform*/
+.navbar a.print-resume:hover {
+    color: var(--accent);
+    transform: translateX(6px);
+} /*Just like how I adopted the shift to the right for the github repository links, this indicates the leaving of the site.*/
+/*Print and Print Resume link effects*/
+
 /*State Manager Section Wrapper*/
 .tinted-glass-plane {
     position: fixed;

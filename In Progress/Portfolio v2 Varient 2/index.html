@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Portfolio Website</title>
+        <link rel="stylesheet" href="style.css" />
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    </head>
+    <body>
+<!--Navigation bar-->
+<!--<span></span> gives the Logo text a gradiant effect.-->
+<!--This will be set to the left.-->
+<!--ul = unordered list-->
+<!--This will be centered-->
+    <nav class="navbar">
+        <a href="#" class="logo"><span>Mark</span></a>
+        <ul class="links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#" id="open-resume-btn" class="open-resume-btn">Resume</a></li>
+        <li><a href="https://docs.google.com/document/d/1FY6PdUCxLjgwpAig-CI7HO4omwOACnfhq3rfPfkFLZ0/preview" target="_blank" class="print-resume">Print Resume</a></li>
+        <li><a href="#projects">Projects</a></li>
+    </ul>
+</nav>
+<!--Navigation bar-->
+<!--Home Section-->
+    <section id="home">
+        <div class="info-box">
+            <h1><span>Hi i'm Mark Wolfe</span></h1>
+            <h2><span>Aspiring Software developer focused on clean architectural and automation. Exploring languages and how concepts transfer between them.</span></h2>
+        </div>
+        <div class="btn-box">
+            <div class="btn">Resume</div>
+        </div>
+    </section>
+<!--Home Section-->
+<!--About me-->
+<section id="about">
+    <div class="about-box">
+        <h1><span>About Me</span></h1>
+        <p>I am an aspiring developer and computer technician. I enjoy the process of learning and adopting new techniques into my arsonal of tools and methods usage.</p>
+    </div>
+</section>
+<!--About me-->
+<!--Embedded Resume no Glass Panel-->
+<section id="resume">
+    <h2>Resume</h2>
+    <div style="position: relative; width: 100%; height: 600px; overflow: hidden;">
+        <iframe src="https://docs.google.com/document/d/e/2PACX-1vSJZ-3kyyJFJUR3piHCNl--UwSlnZ0yjDoEPZcUroTHVf3au9WolgPHWpq8UKXuXrguYMmAdw5nIkpZ/pub?embedded=true" 
+          style="position: absolute; top: -55px; left: 0; width: 100%; height: 655px;" 
+          frameborder="0">
+        </iframe>
+</div>
+    <!--<iframe src="https://google.com" width="100%" height="600px" frameborder="0"></iframe>-->
+    <!--<div style="position: relative; width: 100%; height: 600px; overflow: hidden;">--> <!--Push the iframe upwards to hide the banner from view -->
+    <!--<iframe src="YOUR_ORIGINAL_GOOGLE_EMBED_URL" style="position: absolute; top: -55px; left: 0; width: 100%; height: 655px;" frameborder="0"></iframe>-->
+</div>
+
+-->
+</section>
+<!--Embedded Resume no Glass Panel-->
+<!--Dynamic GitHub Project Section, live feed-->
+    <section id="projects" class="projects-section">
+        <h2>Featured Projects</h2>
+        <div class="project-grid" id="dynamic-project-grid">
+            <p class="loading-text">Fetching production repositories from GitHub...</p>
+        </div>
+    </section>
+<!--Dynamic GitHub Project Section, live feed-->
+        <script src="app.js"></script>
+    </body>
+</html>
