@@ -5,6 +5,9 @@
 /*Hero Section*/
 
 /*CTA Button Resume*/
+const resumeGlass = document.querySelector('#resume-glass');
+const openResumeBtn = document.querySelector('#open-resume-btn');
+const closeResumeBtn = document.querySelector('#close-resume-btn');
 /*CTA Button Resume*/
 
 /*Dynamic GitHub Project Section, live feed*/
@@ -92,8 +95,28 @@ document.addEventListener(
     'DOMContentLoaded',
     loadLiveGitHubProjects
 );
-
 /*Dynamic GitHub Project Section, live feed*/
 
 /*State Manager Section Wrapper/Resume*/
+openResumeBtn.onclick = () => {
+    resumeGlass.classList.add('active');
+    resumeGlass.setAttribute('aria-hidden', 'false');
+}; /*Opens the resume*/
+
+closeResumeBtn.onclick = () => {
+    resumeGlass.classList.remove('active');
+    resumeGlass.setAttribute('aria-hidden', 'true');
+}; /*Closes the resume*/
+
+/*iconopenResumeBtn.onclick = () => {
+    wrapper.classList.remove('active-popup');
+    wrapper.classList.remove('active');
+};*/
+/*Why is it that open-resume-btn the - have to be removed and the R is capilaozed. 
+In the tutorial code for the login and registration page the 
+<span class="icon-close"> is linked in its JavaScript as 
+iconClose.onclick = () => {
+    wrapper.classList.remove('active-popup');
+    wrapper.classList.remove('active');
+};*/
 /*State Manager Section Wrapper/Resume*/

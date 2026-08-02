@@ -7,15 +7,40 @@
 Example:
 If a container <div class="card"> has a font size of 20px:*/
 /*Navigation is just a means to get around and unless I am seperating by functions not by designed sections. Each section could have its own variant of navigating.*/
+
 /*Universal Header and layout*/
 :root {
+    /* Main Portfolio Palette */
     --bg: #0f172a;
     --card-bg: #1e293b;
     --text: #f8fafc;
     --text-dim: #94a3b8;
     --accent: #ff9500; 
     --accent-hover: #cc7800;
+
+    /* Extra Accents */
+    --accent-orange: #ff6b35;
+    --gradient-green: #6cff52;
+    --gradient-blue: #3ec5ff;
+
+    /* Transparent Surfaces */
+    --nav-overlay: rgba(0, 0, 0, 0.8);
+    --glass-bg: rgba(30, 41, 59, 0.7);
 }
+
+/* Single Vibrant Orange Highlight */
+.accent-orange {
+    color: var(--accent-orange);
+}
+
+/* Three-Color Gradient Text (Orange -> Purple -> Indigo) */
+.accent-gradient {
+    background: linear-gradient(135deg, #ff6b35 0%, #a855f7 50%, #6366f1 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    display: inline-block;
+} /*As learned from the tutorial Reactive Portfolio*/
 
 html {
     scroll-behavior: smooth;
@@ -29,11 +54,19 @@ html {
 }
 
 body {
-    background-color: var(--bg);
+    background: url('background.png') no-repeat center center fixed;
+    background-size: cover;
     color: var(--text);
     padding: 1rem;
     line-height: 1.5;
 }
+
+/*body {
+    background-color: var(--bg);
+    color: var(--text);
+    padding: 1rem;
+    line-height: 1.5;
+}*/
 
 .container {
     max-width: 900px;
@@ -72,8 +105,90 @@ h2 {
     margin-bottom: 1.5rem;
 }
 /*Universal Header and layout*/
+
 /*State Manager Section Wrapper*/
+.tinted-glass-plane {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100vw; /*Not aiming for just the left side of the screen, I want it to occupy the while screen and present the resume*/
+    height: 100vh;
+    background: rgba(0,0,0,0.8); /* Transitions from red on the left to your orange accent on the right */
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px); /*For Safari support I didn't know of this limitation and was informed*/
+    /*Layout settings*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    /*Layout settings*/
+    /*To have it hidden by default*/
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease-in-out;
+    /*To have it hidden by default*/
+}
+.tinted-glass-plane.active{
+    opacity: 1;
+    pointer-events: auto;
+}
 /*State Manager Section Wrapper*/
+
+/* Glass Card Container for the Embedded Resume */
+.glass-card {
+    background: var(--card-bg);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 1rem;
+    padding: 2rem;
+    width: 90%;
+    max-width: 750px; /* Adjusted to snugly fit standard doc page size */
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5);
+}/* Tighten the glass card wrapper around document width */
+
+
+#resume iframe {
+    width: 100%;
+    height: 70vh;
+    border: none;
+    border-radius: 8px;
+    background: #ffffff; /* Ensures page content remains clear inside */
+}/* Force iframe to expand across the card and blend naturally */
+
+.glass-card iframe {
+    width: 100%;
+    height: 75vh;
+    border: none;
+    border-radius: 0.5rem;
+    display: block;
+}
+
+.glass-card {
+    max-width: 720px; /* Snugs the glass card right around the Google Doc width */
+}
+
+.close-btn {
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    background: transparent;
+    border: none;
+    color: var(--text);
+    font-size: 2rem;
+    cursor: pointer;
+    transition: color 0.2s ease;
+} /*Moves the x button from this:
+ <div id="resume-glass" class="tinted-glass-plane" aria-hidden="true">
+                <div class="glass-card">
+                    <button id="close-resume-btn" class="close-btn" aria-label="Close Resume">&times;</button>
+to the right.*/
+.close-btn:hover {
+    color: var(--accent);
+}
+/* Glass Card Container for the Embedded Resume */
+
 /*Hero Section*/
 .hero-section {
     padding: 5rem 0;
@@ -93,6 +208,7 @@ h2 {
     font-size: 2rem;
 }
 /*Hero Section*/
+
 /*Dynamic GitHub Project Section, live feed*/
 .project-grid {
     display: grid;
@@ -141,6 +257,7 @@ h2 {
     cursor: pointer;
 }
 /*Dynamic GitHub Project Section, live feed*/
+
 /*Resume State Manaager Button*/
 .cta-btn {
     font-size: 25px;
